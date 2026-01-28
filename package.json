@@ -1,5 +1,11 @@
 {
+  "name": "rc-clone",
+  "type": "module",
   "dependencies": {
-    "@spotify/web-api-ts-sdk": "^1.2.0"
+    "@spotify/web-api-ts-sdk": "^1.2.0",
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.10"
   }
 }
