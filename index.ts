@@ -1,6 +1,26 @@
-import { SpotifyApi } from '@spotify/web-api-ts-sdk';
-import * as dotenv from 'dotenv';
+const clientId = process.env.SPOTIFY_CLIENT_ID!; // Replace with your client id
+const code = undefined;
 
-dotenv.config()
+if (!code) {
+    redirectToAuthCodeFlow(clientId);
+} else {
+    const accessToken = await getAccessToken(clientId, code);
+    const profile = await fetchProfile(accessToken);
+    populateUI(profile);
+}
 
-const sdk = SpotifyApi.withUserAuthorization(process.env.SPOTIFY_CLIENT_ID!, process.env.SPOTIFY_CLIENT_SECRET!, ["user-top-read"]);
+async function redirectToAuthCodeFlow(clientId: string) {
+    // TODO: Redirect to Spotify authorization page
+}
+
+async function getAccessToken(clientId: string, code: string) {
+  // TODO: Get access token for code
+}
+
+async function fetchProfile(token: string): Promise<any> {
+    // TODO: Call Web API
+}
+
+function populateUI(profile: any) {
+    // TODO: Update UI with profile data
+}
